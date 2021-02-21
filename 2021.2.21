@@ -32,3 +32,23 @@ ent.add_line pt5,pt1
 
 
 tips：ruby写好的程序可以保存为.rb格式的文件，可以直接在sketchup中直接调用保存好的文件，（需要注意的是，文件路径是反斜杠，和默认路径相反）
+
+
+//用add curve 绘制五角星
+mod = Sketchup.active_model # Open model
+ent = mod.entities # All entities in model
+
+pt1 = [5,0,0]
+pt2 = [1.5625,-4.75,0]
+pt3 = [-4.0625,-2.9375,0]
+pt4 = [-4.0625,2.9375,0]
+pt5 = [1.5625,4.758,0]
+
+#指定curve变数接受传回的物件，并绘制图形
+curve = ent.add_curve pt1,pt2,pt3,pt4,pt5,pt1
+
+#显示curve的形态及长度
+puts "curve是什么？", curve.class
+puts "curve的长度？", curve.length
+
+
