@@ -1,0 +1,5 @@
+mod = Sketchup.active_model
+ent = mod.entities # All entities in model
+sel = mod.selection # Current selection
+
+ent.add_line [0,0,0,],[9,9,9]
